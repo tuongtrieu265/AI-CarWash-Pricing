@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: carwash-backend
+  main:
+    allow-circular-references: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/carwash_db
+    username: postgres
+    password: Cattuong1188@
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+# JWT Configuration
+app:
+  jwt:
+    secret: Y2Fyd2FzaC1tYW5hZ2VtZW50LXN5c3RlbS1zZWNyZXQta2V5LWZvci1qd3QtdG9rZW4tMjAyNA==
+    expiration: 86400000  # 24 hours in milliseconds
+
+# Logging
+logging:
+  level:
+    com.carwash: DEBUG
+    org.springframework.security: DEBUG
+
+# SePay Payment Configuration (Sandbox / Testmode)
+sepay:
+  webhook-token: "YOUR_SEPAY_WEBHOOK_TOKEN"
+  bank-id: "MBBANK"
+  account-no: "016102004"
+  account-name: "NGUYEN KIM HOANG"
+  auto-tunnel: true

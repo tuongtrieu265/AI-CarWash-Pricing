@@ -1,0 +1,6 @@
+{
+  "name": "Đặt Lịch Rửa Xe AutoClean",
+  "description": "Website đặt lịch rửa xe, chăm sóc xe thông minh với giao diện sáng, hiện đại, hỗ trợ chọn dịch vụ, theo dõi trạng thái đơn hàng.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

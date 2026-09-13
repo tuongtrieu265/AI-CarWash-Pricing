@@ -1,0 +1,179 @@
+
+:root {
+  --admin-sidebar-bg: #0f172a;       /* Slate 900 - Đen xanh sang trọng */
+  --admin-sidebar-text: #94a3b8;     /* Slate 400 */
+  --admin-sidebar-text-hover: #ffffff;
+  --admin-sidebar-active: #2563eb;   /* Blue 600 - Xanh dương đậm */
+  
+  --admin-header-bg: rgba(255, 255, 255, 0.85); /* Hiệu ứng kính (Glassmorphism) */
+  --admin-content-bg: #f8fafc;       /* Slate 50 - Xám cực nhạt */
+  --admin-text-main: #1e293b;        /* Slate 800 */
+  
+  --admin-border: #e2e8f0;
+  --admin-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --admin-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Bố cục tổng thể */
+.admin-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--admin-content-bg);
+  color: var(--admin-text-main);
+}
+
+/* === SIDEBAR (Thanh bên trái) === */
+.admin-sidebar {
+  width: 260px;
+  background-color: var(--admin-sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  z-index: 100;
+}
+
+.admin-logo {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav {
+  padding: 20px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: var(--admin-sidebar-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.admin-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--admin-sidebar-text-hover);
+}
+
+.admin-nav-item.active {
+  background-color: var(--admin-sidebar-active);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+}
+
+/* === KHU VỰC BÊN PHẢI (Header + Content) === */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* === HEADER === */
+.admin-header {
+  height: 70px;
+  background-color: var(--admin-header-bg);
+  backdrop-filter: blur(8px); /* Hiệu ứng mờ nền chuẩn trend */
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--admin-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 90;
+}
+
+.admin-header-search {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 20px;
+  padding: 8px 16px;
+  width: 300px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.admin-header-search:focus-within {
+  border-color: var(--admin-sidebar-active);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.admin-header-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-left: 8px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-icon-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-icon-btn:hover {
+  color: var(--admin-text-main);
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--admin-sidebar-active);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* === CONTENT (Nội dung chính) === */
+.admin-content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px;
+}
+
+/* Bảng dữ liệu demo - Bạn có thể dùng cho các trang con */
+.admin-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: var(--admin-shadow-sm);
+  border: 1px solid var(--admin-border);
+  padding: 24px;
+}
